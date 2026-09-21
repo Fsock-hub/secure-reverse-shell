@@ -1,5 +1,5 @@
-# python-wh-backdoor
-# WH's Backdoor (Reverse Shell) - Version 0.4
+# Secure Reverse-Shell
+# Secure reverse-shell with encryption - Version 0.4
 
 A lightweight, robust **Reverse Shell** implemented in clean Python using the standard `socket` and `subprocess` libraries. This project was developed from scratch for educational purposes to understand network programming, custom socket protocols, and systems administration.
 
