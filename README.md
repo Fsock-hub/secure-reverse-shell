@@ -27,9 +27,8 @@ A lightweight, robust **Reverse Shell** implemented in clean Python using the st
    ```
 ## TODO
 
-`AES Encryption`
-
-Upload and download files using `chunks`
+- AES Encryption
+- Upload and download files using `chunks`
 
 ##  Disclaimer
 
