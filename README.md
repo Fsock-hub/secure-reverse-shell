@@ -1,5 +1,5 @@
-# Secure Reverse-Shell
-# Secure reverse-shell with encryption - Version 0.4
+# Reverse-Shell
+# Reverse-shell  - Version 0.4
 
 A lightweight, robust **Reverse Shell** implemented in clean Python using the standard `socket` and `subprocess` libraries. This project was developed from scratch for educational purposes to understand network programming, custom socket protocols, and systems administration.
 
@@ -25,6 +25,10 @@ A lightweight, robust **Reverse Shell** implemented in clean Python using the st
    ```bash
    python client.py
    ```
+## TO DO
+
+`AES Encryption`
+Upload, download files using `chunks`
 
 ##  Disclaimer
 
