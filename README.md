@@ -25,10 +25,11 @@ A lightweight, robust **Reverse Shell** implemented in clean Python using the st
    ```bash
    python client.py
    ```
-## TO DO
+## TODO
 
 `AES Encryption`
-Upload, download files using `chunks`
+
+Upload and download files using `chunks`
 
 ##  Disclaimer
 
