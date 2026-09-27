@@ -16,26 +16,24 @@ Features
 ## Installation & Usage
   Prerequisites
 
-    Python 3.x installed on both machines (only required for running raw scripts).
+  - Python 3.x installed on both machines (only required for running raw scripts).
 
 ## Quick Start
 
-    Start the server on your control machine:
-    ```bash
+  Start the server on your control machine:
 
     python server.py
-    ```
+  
 ## Launch the client on the managed system:
-    ```bash
 
     python client.py
-    ```
+    
 ## TODO
 
-    - AES encryption for traffic.
+  - AES encryption for traffic.
 
-    - File upload and download using chunks.
+  - File upload and download using chunks.
 
-- Disclaimer
+## Disclaimer
 
 This project is created strictly for educational purposes, authorized security auditing, and internal penetration testing. Do not run this software on devices you do not own or do not have explicit permission to test. The author is not responsible for any misuse or damage caused by this program.
