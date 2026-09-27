@@ -24,7 +24,7 @@ Features
 
     python server.py
   
-## Launch the client on the managed system:
+  Launch the client on the managed system:
 
     python client.py
     
