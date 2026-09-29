@@ -1,6 +1,3 @@
-Here is a complete README for your project, written in professional English. It describes the key exchange, encryption, and usage in detail, suitable for a repository.
-
----
 
 # Secure Reverse Shell
 
