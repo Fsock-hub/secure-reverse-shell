@@ -1,5 +1,10 @@
-from cryptography.fernet import Fernet
-
+import os
+try:
+    from cryptography.fernet import Fernet
+except:
+    os.system('python -m pip install cryptography')
+    from cryptography.fernet import Fernet
+    
 def generate_key():
     return Fernet.generate_key()
 
