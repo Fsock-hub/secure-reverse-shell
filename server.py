@@ -52,7 +52,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(('0.0.0.0', 4444))
 server.listen(2)
 server.settimeout(60)
-print('=' * 18, "\nSecure Reverse-Shell V0.4",)
+print('=' * 18, "\nSecure Reverse-Shell Version: 1.0"\n Up-to-date GitHub link: github.com/Fsock-hub/secure-reverse-shell,)
 print('=' * 18)
 print('[*] Wait connection...')
 
