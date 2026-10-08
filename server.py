@@ -1,5 +1,7 @@
 import socket
 import os
+import time
+import threading
 from crypto_utils import encrypt_message, decrypt_message, generate_key
 
 def generate_new_key():
@@ -61,11 +63,29 @@ print('''
 |____________________________________________________________________________________________________________|
    | [Version 1.0] |                                                                                     
 ''')
+time.sleep(1)
 print(r'[*] Up to-date github link: https://github.com/Fsock-hub/secure-reverse-shell')
-print('[*] Wait connection...')
+stop_loading = False
+
+def show_dots():
+    i = 0
+    while not stop_loading:
+        print(f"[*] Wait connection{'.' * (i % 4):<3}", end="\r")
+        i += 1
+        time.sleep(0.4)
+    print(" " * 30, end="\r")
+
+dot_thread = threading.Thread(target=show_dots, daemon=True)
+dot_thread.start()
+
 
 try:
     conn, addr = server.accept()
+    print(f'[+] Connection by {addr}')
+
+    stop_loading = True
+    dot_thread.join()
+
     raw = conn.recv(1024)
 
     if raw == b'REQUEST_KEY':
@@ -92,8 +112,6 @@ try:
         input('[*] Press Enter to exit...')
         exit()
 
-    conn, addr = server.accept()
-    print(f'[+] Connection by {addr}')
 
     while True:
 
@@ -111,14 +129,18 @@ try:
         
         if output is None:
             print('[!] Сlient terminated connection')
+            stop_loading = True
+            dot_thread.join()
             break
 
         print(output)
 
 except socket.timeout:
     print("[!] Can't connect to client, please try again")
+    stop_loading = True
+    dot_thread.join()
     
 finally:
-    print('[!] Connection closed')
+    print('[*] Connection closed')
     server.close()
-    input('[*] Press Enter to exit...')
+    input()
